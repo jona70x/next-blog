@@ -1,10 +1,19 @@
 import React from "react";
 import PostContent from "@/components/posts/post-detail/post-content";
+import Head from "next/head";
 import { getPostData, getPostsFiles } from "@/lib/posts-util";
 
 const PostPageDetail = (props) => {
   const { post } = props;
-  return <PostContent post={post} />;
+  return (
+    <>
+      <Head>
+        <title>{post.title} </title>
+        <meta name="description" content={props.excerpt} />
+      </Head>
+      <PostContent post={post} />
+    </>
+  );
 };
 
 export default PostPageDetail;
