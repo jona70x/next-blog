@@ -42,7 +42,7 @@ const ContactForm = () => {
 
     try {
       await sendContactData({
-        message: enteredEmail,
+        message: enteredMessage,
         name: enteredName,
         email: enteredEmail,
       });
